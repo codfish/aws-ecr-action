@@ -21,4 +21,6 @@ jobs:
       - name: build and push latest docker image to GCR
         run: |
           docker build . --tag ghcr.io/codfish/aws-ecr-action:$GITHUB_SHA --cache-from ghcr.io/codfish/aws-ecr-action:latest
+          docker tag ghcr.io/codfish/aws-ecr-action:$GITHUB_SHA ghcr.io/codfish/aws-ecr-action:latest
           docker push ghcr.io/codfish/aws-ecr-action:$GITHUB_SHA
+          docker push ghcr.io/codfish/aws-ecr-action:latest
