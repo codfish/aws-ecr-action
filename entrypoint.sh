@@ -107,6 +107,7 @@ function docker_build() {
     docker_tag_args="$docker_tag_args -t $2/$INPUT_REPO:$tag"
   done
 
+  printenv
 
   echo "== INPUT_EXTRA_BUILD_ARGS = $INPUT_EXTRA_BUILD_ARGS"
   echo "== INPUT_DOCKERFILE = $INPUT_DOCKERFILE"
