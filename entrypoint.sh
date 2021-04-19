@@ -62,11 +62,12 @@ function assume_role() {
 }
 
 function create_ecr_repo() {
-  if [ "${1}" =  ]; then
+  if [ "${1}" = true ]; then
     echo "== START CREATE REPO"
     echo "== CHECK REPO EXISTS"
 
     echo "== INPUT_CREATE_REPO = $INPUT_CREATE_REPO"
+    echo "== 1 = ${1}"
 
     set +e
     output=$(aws ecr describe-repositories --region $AWS_DEFAULT_REGION --repository-names $INPUT_REPO 2>&1)
