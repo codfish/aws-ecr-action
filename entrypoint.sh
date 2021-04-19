@@ -62,6 +62,7 @@ function assume_role() {
 }
 
 function create_ecr_repo() {
+    echo "== INPUT_CREATE_REPO = $INPUT_CREATE_REPO"
   if [ "${1}" = true ]; then
     echo "== START CREATE REPO"
     echo "== CHECK REPO EXISTS"
